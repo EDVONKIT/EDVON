@@ -1,0 +1,25 @@
+{	"extensionName": "NRF Receiver",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"nrf_receiver",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/nrf_receiver.js",
+	"blockSpecs": [
+		["w", "initialize nrf receiver at %s %s","initializetani","9","10",
+		{"setup":"const uint64_t pipe = 0xE8E8F0F0E1LL;\nradio.begin();\nSerial.begin(9600);\nradio.openReadingPipe(1,pipe);\nradio.startListening();\n","inc":"","def":"#include  <SPI.h>\n#include  <RF24.h>\n#include  <nRF24L01.h>\nRF24 radio({0},{1});\nint msg[1];\n","work":"","loop":""}],
+		
+		["w", "receive data & assign to %s","taLinetani","var",
+		{"setup":"","inc":"","def":"","work":"if(radio.available()){\nbool done = false;\nwhile(!done){\ndone=radio.read(msg, 1);\nSerial.println(msg[0]);\n{0}=msg[0];\n} }\nelse{\nSerial.println(\"No radio available\");\n}","loop":""}],
+				
+
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

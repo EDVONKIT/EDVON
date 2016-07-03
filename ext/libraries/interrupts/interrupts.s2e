@@ -1,0 +1,30 @@
+{	"extensionName": "Interrupts",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"serial",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/interrupts.js",
+	"blockSpecs": [
+		
+		["w", "Initialize interrupt on Pin %d.digital222 as %s","writeLine234", "2","",
+		{"setup":"//Make a block from Data&Blocks named ISR{0}\npinMode({0},INPUT);\nattachInterrupt(digitalPinToInterrupt({0}),ISR{0},{1});\n","inc":"","def":"","work":"","loop":""}],
+		
+		["R","CHANGE","readLine0204",
+		{"setup":"","inc":"","def":"","work":"CHANGE","loop":""}],
+		["R","LOW","readLine0212",
+		{"setup":"","inc":"","def":"","work":"LOW","loop":""}],
+		["R","RISING","readLine0218",
+		{"setup":"","inc":"","def":"","work":"RISING","loop":""}],
+		["R","FALLING","readLine0234",
+		{"setup":"","inc":"","def":"","work":"FALLING","loop":""}],
+
+
+		
+	],
+	"menus": {
+	"digital222":["2","3","18","19","20","21"],
+	},
+	"translators":{
+	}
+}

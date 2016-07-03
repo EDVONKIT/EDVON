@@ -1,0 +1,37 @@
+{	"extensionName": "Watch Dog Timer",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"wdt",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/wdt.js",
+	"blockSpecs": [
+		
+		
+		
+		["w", "WDT Disable","writeLine02",
+		{"setup":"","inc":"#include <avr/wdt.h>\n","def":"","work":"wdt_disable();\n","loop":""}],
+
+		["w", "WDT Enable %s","writeLine04", "",
+		{"setup":"","inc":"#include <avr/wdt.h>\n","def":"","work":"wdt_enable({0});\n","loop":""}],
+		
+		["R","WDTO_1S","readLineak02",
+		{"setup":"","inc":"","def":"","work":"WDTO_1S","loop":""}],
+		["R","WDTO_2S","readLineak04",
+		{"setup":"","inc":"","def":"","work":"WDTO_2S","loop":""}],
+		["R","WDTO_4S","readLineak12",
+		{"setup":"","inc":"","def":"","work":"WDTO_4S","loop":""}],
+		["R","WDTO_8S","readLineak34",
+		{"setup":"","inc":"","def":"","work":"WDTO_8S","loop":""}],
+
+		["w", "WDT Reset","writeLine",
+		{"setup":"","inc":"#include <avr/wdt.h>\n","def":"","work":"wdt_reset();\n","loop":""}],
+		
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}

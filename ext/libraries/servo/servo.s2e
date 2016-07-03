@@ -1,0 +1,26 @@
+{	"extensionName": "Servo",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"servo",
+	"sort":7,
+	"firmware":"0.2.202",
+	"javascriptURL":"js/servo.js",
+	"blockSpecs": [
+		["w", "Servo%n attach to pin %n","whenReceivedt22","0","2",
+		{"setup":"serv0{0}.attach({1});\n","inc":"#include <Servo.h>\n","def":"Servo serv0{0};\n","work":"","loop":""}],
+		
+		["w", "move servo %n servo %n degrees","taLinet22", "0","90",
+		{"setup":"","inc":"","def":"","work":"serv0{0}.write({1});\n","loop":""}],
+		
+		
+		
+		
+	],
+	"menus": {
+
+	},
+	"translators":{
+	}
+}
+
+

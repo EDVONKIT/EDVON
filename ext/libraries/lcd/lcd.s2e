@@ -1,0 +1,25 @@
+{	"extensionName": "LCD",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"lcd",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/lcd.js",
+	"blockSpecs": [
+		["w", "initialize lcd RS,EN %n %n d4,d3,d2,d1 %n %n %n %n","whenReceived","12","11","5","4","3","2",
+		{"setup":"lcd.begin(12,2);\n","inc":"#include <LiquidCrystal.h>\n","def":"LiquidCrystal lcd({0},{1},{2},{3},{4},{5});\n","work":"","loop":""}],
+		
+		["w", "write %s","taLine", "hello",
+		{"setup":"","inc":"","def":"","work":"lcd.print({0});\n","loop":""}],
+		
+		
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

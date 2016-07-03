@@ -1,0 +1,31 @@
+{	"extensionName": "EEPROM",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"eeprom",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/eeprom.js",
+	"blockSpecs": [
+		["w", "Write %n at address %n","whenReceivedt22t2","2","220",
+		{"setup":"","inc":"#include <EEPROM.h>\n","def":"","work":"EEPROM.write({1}, {0});\n","loop":""}],
+		
+		["w", "Read from address %n & assign to %s","taLinet22t2", "0","val",
+		{"setup":"","inc":"#include <EEPROM.h>\n","def":"","work":"{1}=EEPROM.read({0});\n","loop":""}],
+				
+		["r", "EEPROM Length","taLinet22t22",
+		{"setup":"","inc":"","def":"","work":"EEPROM.length()","loop":""}],
+		
+		["w", "Clear EEPROM","whenReceivedt22t22",
+		{"setup":"","inc":"#include <EEPROM.h>\n","def":"","work":"for(int i=0;i<EEPROM.length();i++)\nEEPROM.write(i,0);","loop":""}],
+		
+		
+		
+	],
+	"menus": {
+
+	},
+	"translators":{
+	}
+}
+
+

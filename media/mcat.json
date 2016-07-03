@@ -1,0 +1,35 @@
+{
+	"objName": "Minion",
+	"sounds": [{
+			"soundName": "eat",
+			"soundID": -1,
+			"md5": "714e598d28e493cc50babc17f2c4895d.wav",
+			"sampleCount": 18688,
+			"rate": 22050,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "Minion-01",
+			"baseLayerID": -1,
+			"baseLayerMD5": "min02.gif",
+			"rotationCenterX": 0,
+			"rotationCenterY": 0
+		},{
+			"costumeName": "Minion-02",
+			"baseLayerID": -1,
+			"baseLayerMD5": "min34.gif",
+			"rotationCenterX": 0,
+			"rotationCenterY": 0
+		}],
+	"currentCostumeIndex": 0,
+	"scratchX": 0,
+	"scratchY": 0,
+	"scale": 1,
+	"direction": 90,
+	"rotationStyle": "normal",
+	"isDraggable": false,
+	"indexInLibrary": 100000,
+	"visible": true,
+	"spriteInfo": {
+	}
+}

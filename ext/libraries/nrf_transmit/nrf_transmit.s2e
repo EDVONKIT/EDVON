@@ -1,0 +1,25 @@
+{	"extensionName": "NRF Transmit",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"nrf_transmit",
+	"sort":7,
+	"firmware":"0.2.202",
+	"javascriptURL":"js/nrf_transmit.js",
+	"blockSpecs": [
+		["w", "initialize nrf %s %s","whenReceivedt2","9","10",
+		{"setup":"const uint64_t pipe = 0xE8E8F0F0E1LL;\nradio.begin();\nSerial.begin(9600);\nradio.openWritingPipe(pipe);\n","inc":"","def":"#include  <SPI.h>\n#include  <RF24.h>\n#include  <nRF24L01.h>\nRF24 radio({0},{1});\nint msg[1];\n","work":"","loop":""}],
+		
+		["w", "transmit %s","taLine02", "2202",
+		{"setup":"","inc":"","def":"","work":"msg[0] = {0};\nradio.write(msg, 1);\n","loop":""}],
+		
+		
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

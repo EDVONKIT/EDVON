@@ -1,0 +1,23 @@
+{	"extensionName": "I2C Slave",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"i2cs",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/i2c_slave.js",
+	"blockSpecs": [
+		["w", "receive from %n & assign to %s","whenReceived0022","22","val_name",
+		{"setup":"Serial.begin(115200);\n","inc":"","def":"void receiveEvent(int howMany){\n\nint tanitest2=Wire.read();\n{1}=tanitest2;\nSerial.println({1}); } \n","work":"Wire.begin({0});\nWire.onReceive(receiveEvent);\n","loop":""}],
+		
+		
+		
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

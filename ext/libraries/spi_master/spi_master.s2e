@@ -1,0 +1,21 @@
+{	"extensionName": "SPI Master",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"spim",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/spi_master.js",
+	"blockSpecs": [
+	
+		["w", "transmit %s to slave","taLine2202", "t\\n",
+		{"setup":"pinMode(SS,OUTPUT);\ndigitalWrite(SS,HIGH);\nSPI.begin();\nSPI.setClockDivider(SPI_CLOCK_DIV8);\n","inc":"#include <SPI.h>\n","def":"","work":"char c;\ndigitalWrite(SS,LOW);\nfor(const char*p = {0}; c=*p;p++)\nSPI.transfer(c);\ndigitalWrite(SS,HIGH);\n","loop":""}],
+				
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

@@ -1,0 +1,21 @@
+{	"extensionName": "7Segment IC",
+	"sort":1,
+	"extensionPort": 0,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/7segment_ic.js",
+	"blockSpecs": [
+		["w", "Initialize 7segment %n %n %n %n","runPwm02", "2", "3","4","5",
+		{"encode":"{d0}{d1}{d2}{d3}{d4}{d5}{d6}{d7}","setup":";","inc":"#include <segmentic.h>\n","def":"int tt02=0;\nvoid taniic(int tani2){\nswitch(tani2){\ncase 0:\ntanii0({0},{1},{2},{3});\n break; \n\ncase 1:\ntanii1({0},{1},{2},{3});\n break; \ncase 2:\ntanii2({0},{1},{2},{3});\n break; \ncase 3:\ntanii3({0},{1},{2},{3});\n break; \ncase 4:\ntanii4({0},{1},{2},{3});\n break; \ncase 5:\ntanii5({0},{1},{2},{3});\n break; \ncase 6:\ntanii6({0},{1},{2},{3});\n break; \ncase 7:\ntanii7({0},{1},{2},{3});\n break; \ncase 8:\ntanii8({0},{1},{2},{3});\n break; \ncase 9:\ntanii9({0},{1},{2},{3});\n break; \ncase 10:\ntanii10({0},{1},{2},{3});\n break; \ncase 11:\ntanii11({0},{1},{2},{3});\n break; \ncase 12:\ntanii12({0},{1},{2},{3});\n break; \ncase 13:\ntanii13({0},{1},{2},{3});\n break; \ncase 14:\ntanii14({0},{1},{2},{3});\n break; \ncase 15:\ntanii15({0},{1},{2},{3});\n break; \n} }","work":"\npinMode({0},OUTPUT);\npinMode({1},OUTPUT);\npinMode({2},OUTPUT);\npinMode({3},OUTPUT);\n","loop":""}],
+		
+		["w", "write %d.digital2t2","runDigital02", "2",
+		{"encode":"{d0}","setup":"","inc":"","def":"","work":"\ntt02={0};\ntaniic({0});\n","loop":""}],
+		
+	],
+	"menus": {
+		"digital2t2":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],
+	},
+	"values":{
+	},
+	"translators":{
+	}
+}

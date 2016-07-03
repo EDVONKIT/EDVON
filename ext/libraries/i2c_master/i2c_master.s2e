@@ -1,0 +1,25 @@
+{	"extensionName": "I2C Master",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"i2cm",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/i2c_master.js",
+	"blockSpecs": [
+		["w", "initialize i2c master","whenReceived022",
+		{"setup":"Wire.begin();\n","inc":"","def":"","work":"","loop":""}],
+		
+		["w", "transmit %s on address %n","taLine022", "2","22",
+		{"setup":"","inc":"","def":"","work":"Wire.beginTransmission({1});\nbyte tt0022={0};\nWire.write(tt0022);\nWire.endTransmission();\ndelay(10);\n","loop":""}],
+		
+		
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

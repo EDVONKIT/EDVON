@@ -1,0 +1,24 @@
+{	"extensionName": "SPI Slave",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"spis",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/spi_slave.js",
+	"blockSpecs": [
+	
+		["w", "read data received from master","taLine22022", "t\\n","val",
+		{"setup":"SPCR |= bit (SPE);\npinMode(MISO, OUTPUT);\npos = 0;\nprocess_it = false;\nSPI.attachInterrupt();\n","inc":"#include <SPI.h>\n","def":"char buf [100];\nvolatile byte pos;\nvolatile boolean process_it;\nISR (SPI_STC_vect){\n  byte c = SPDR;\n  if (pos < sizeof buf){\n    buf [pos++] = c;\n    if (c == '\\n')\n      process_it = true;\n  } }\n    char readIt(){\nif (process_it)  {\n                buf [pos] = 0;\n                pos = 0;\n                process_it = false;\n          } }\n","work":"readIt();\ndelay(10);\n","loop":""}],
+
+		["r", "use data","whenReceived22022", "t\\n","val",
+		{"setup":"","inc":"","def":"","work":"buf","loop":""}],
+				
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}
+
+

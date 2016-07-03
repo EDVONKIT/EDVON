@@ -1,0 +1,23 @@
+{	"extensionName": "XBee",
+	"extensionPort": 0,
+	"extensionHost": "127.0.0.1",
+	"extensionType":"xbee",
+	"sort":7,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/xbee.js",
+	"blockSpecs": [
+			
+		["w", "Transfer (0-255): %n at Rx,Tx %n%n","taniwriteLine", "22","2","3",
+		{"setup":"XBee.begin(9600);\n","inc":"","def":"SoftwareSerial XBee({1},{2});\n","work":"XBee.write({0});\n","loop":""}],
+
+		["r","ReadData from Rx,Tx %n%n","tanireadLine","2","3",
+		{"setup":"XBeer.begin(9600);\n","inc":"","def":"SoftwareSerial XBeer({0},{1});\n","work":"XBeer.read()","loop":""}],
+
+		
+		
+	],
+	"menus": {
+	},
+	"translators":{
+	}
+}

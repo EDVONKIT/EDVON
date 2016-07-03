@@ -1,0 +1,21 @@
+{	"extensionName": "7Segment",
+	"sort":1,
+	"extensionPort": 0,
+	"firmware":"2.2.202",
+	"javascriptURL":"js/7segment.js",
+	"blockSpecs": [
+		["w", "Initialize 7segment %n %n %n %n %n %n %n","runPwm2", "2", "3","4","5","6","7","8",
+		{"encode":"{d0}{d1}{d2}{d3}{d4}{d5}{d6}{d7}","setup":";","inc":"#include <segment.h>\n","def":"int ttt=0;\nvoid ta(int tani){\nswitch(tani){\ncase 0:\nta0({0},{1},{2},{3},{4},{5},{6});\n break; \n\ncase 1:\nta1({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 2:\nta2({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 3:\nta3({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 4:\nta4({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 5:\nta5({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 6:\nta6({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 7:\nta7({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 8:\nta8({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 9:\nta9({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 10:\nta10({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 11:\nta11({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 12:\nta12({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 13:\nta13({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 14:\nta14({0},{1},{2},{3},{4},{5},{6});\n break; \ncase 15:\nta15({0},{1},{2},{3},{4},{5},{6});\n break; \n} }","work":"\npinMode({0},OUTPUT);\npinMode({1},OUTPUT);\npinMode({2},OUTPUT);\npinMode({3},OUTPUT);\npinMode({4},OUTPUT);\npinMode({5},OUTPUT);\npinMode({6},OUTPUT);","loop":""}],
+		
+		["w", "write %d.digital2t","runDigital2", "2",
+		{"encode":"{d0}","setup":"","inc":"","def":"","work":"\nttt={0};\nta({0});\n","loop":""}],
+		
+	],
+	"menus": {
+		"digital2t":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],
+	},
+	"values":{
+	},
+	"translators":{
+	}
+}
